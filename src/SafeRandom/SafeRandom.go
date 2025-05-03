@@ -19,9 +19,10 @@ func byteToAscii(keys *[]byte) string {
 	// calculation Quotient 
 	calcQuotient := float64(256) / float64(tempStringLength)
 
+
 	var bufferString string = ""
 	
-
+	// extract keys and generate a string buffer
 	for item := range keysLength {
 
 		// get key item
@@ -38,11 +39,11 @@ func byteToAscii(keys *[]byte) string {
 		bufferString += string(tempString[calcAlphaBetPosition])
 	}
 
-
 	return bufferString
 }
 
 
+// generate a random number
 func GenerateRandom(size uint) string  {
 
 	// create an empty array
@@ -54,7 +55,8 @@ func GenerateRandom(size uint) string  {
 		log.Fatal("Problem to Create a Random number")
 			
 	}
-	
+
+	// convert all keys to ascii
 	getBuffer := byteToAscii(&keys)
 
 	return getBuffer

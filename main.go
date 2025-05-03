@@ -1,7 +1,6 @@
 package main
 
 import "fmt"
-import "vheidari/main/src/Modems"
 // import "vheidari/main/src/SafeRandom"
 
 import "vheidari/main/src/Urls"
@@ -13,7 +12,6 @@ import "vheidari/main/src/Urls"
 func main() {
 	fmt.Println("Hello World!")
 
-	Modems.PrintS()
 
 
 	// for item := range 10000 {
@@ -27,23 +25,22 @@ func main() {
 	// fmt.Println(item)
 	// fmt.Println("-----------------")
 	// 	
-		
-		
+	
 	// }
 
 
 
 	getUrl := Urls.BuildUrl("http://", "192.168.1.1", "")
 
-	Urls.AddHeader("keyOne", "valueOne", &getUrl)
-	Urls.AddHeader("keyTwo", "valueTwo", &getUrl)
-	Urls.AddHeader("keyThree", "valueThree", &getUrl)
-	Urls.AddHeader("set-cookie", "0xid=1?username=vheidari?jobs=programmer?expire=866642131864", &getUrl)
-	Urls.AddHeader("set-settion", "soofjsdXojojfojoojojfsdlkjfdsojo", &getUrl)
-	Urls.AddHeader("range", "norange", &getUrl)
+	getUrl.AddHeader("keyOne", "valueOne")
+	getUrl.AddHeader("keyTwo", "valueTwo")
+	getUrl.AddHeader("keyThree", "valueThree")
+	getUrl.AddHeader("set-cookie", "0xid=1?username=vheidari?jobs=programmer?expire=866642131864")
+	getUrl.AddHeader("set-settion", "soofjsdXojojfojoojojfsdlkjfdsojo")
+	getUrl.AddHeader("range", "norange")
 
 
-	urlToString := Urls.UrlToString(&getUrl)
+	urlToString := getUrl.UrlToString()
 
 	
 

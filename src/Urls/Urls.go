@@ -1,5 +1,12 @@
 package Urls
 
+
+type Urls interface  {
+	urlLis() map[string][]Url
+}
+
+
+// the url object
 type Url struct {
 	protocol string
 	domain_name string
@@ -8,7 +15,7 @@ type Url struct {
 }
 
 
-// Build An Url 
+// build an url object 
 func BuildUrl(protocol string, domain_name string, domain_ext string) Url { 
 	header := make(map[string]string)
 	url := Url {
@@ -22,14 +29,14 @@ func BuildUrl(protocol string, domain_name string, domain_ext string) Url {
 }
 
 
-// Add New Key Value Header
-func AddHeader(key string , value string, url *Url) {
+// [url method]: add new key/value to header
+func (url *Url) AddHeader(key string , value string) {
 	url.header[key] = value;
 }
 
 
-// Return Whole Url as string
-func UrlToString(url *Url) string {
+// [url method]: generate a complete string from the url object
+func (url *Url) UrlToString() string {
 	buffUrl := url.protocol
 	buffUrl += url.domain_name
 	buffUrl += url.domain_ext
