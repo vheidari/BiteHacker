@@ -1,16 +1,18 @@
 package Urls
 
 
+// declare Urls interface
 type Urls interface  {
 	UrlPool() map[string]Url
 }
 
 
+
+// make a map of urls
 func UrlPool() map[string]Url {
 	pool := make(map[string]Url)
 	return pool
 }
-
 
 
 // the url object
@@ -20,7 +22,6 @@ type Url struct {
 	domain_ext string
 	path string
 	header map[string]string
-	
 }
 
 
@@ -53,4 +54,3 @@ func (url *Url) UrlToString() string {
 	buffUrl += url.path
 	return buffUrl
 }
-

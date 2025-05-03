@@ -3,6 +3,7 @@ package main
 import "fmt"
 // import "vheidari/main/src/SafeRandom"
 import "vheidari/main/src/Urls"
+import "vheidari/main/src/Ssid"
 
 
 
@@ -53,6 +54,24 @@ func main() {
 
 	fmt.Println(urlsPool)
 
+
+
+	for k,v := range urlsPool {
+		
+		fmt.Println(k)
+		fmt.Println(v)
+	}
+
+
+
+	//  new ssid 
+	NewSsid := Ssid.NewSSIDAndPassword(16, 32, false)
+
+	wpaSettings := Ssid.GenerateWPASettings("WPA2", "TKIP+AES", "WPA2-PSK");
+	
+	NewSsid.AddWPASettings(&wpaSettings)
+
+	fmt.Println(NewSsid)
 
 
 
