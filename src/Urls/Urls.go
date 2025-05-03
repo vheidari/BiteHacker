@@ -2,8 +2,15 @@ package Urls
 
 
 type Urls interface  {
-	urlLis() map[string][]Url
+	UrlPool() map[string]Url
 }
+
+
+func UrlPool() map[string]Url {
+	pool := make(map[string]Url)
+	return pool
+}
+
 
 
 // the url object
@@ -11,17 +18,20 @@ type Url struct {
 	protocol string
 	domain_name string
 	domain_ext string
+	path string
 	header map[string]string
+	
 }
 
 
 // build an url object 
-func BuildUrl(protocol string, domain_name string, domain_ext string) Url { 
+func BuildUrl(protocol string, domain_name string, domain_ext string, path string) Url { 
 	header := make(map[string]string)
 	url := Url {
 		protocol: protocol,
 		domain_name: domain_name,
 		domain_ext: domain_ext,
+		path: path,
 		header: header,
 	}
 
@@ -40,6 +50,7 @@ func (url *Url) UrlToString() string {
 	buffUrl := url.protocol
 	buffUrl += url.domain_name
 	buffUrl += url.domain_ext
+	buffUrl += url.path
 	return buffUrl
 }
 

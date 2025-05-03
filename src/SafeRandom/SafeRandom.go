@@ -6,6 +6,8 @@ import(
 	"math"
 )
 
+
+// convert byte num to ascii and return a string
 func byteToAscii(keys *[]byte) string {
 
 	// template string holds a string sample
@@ -43,7 +45,7 @@ func byteToAscii(keys *[]byte) string {
 }
 
 
-// generate a random number
+// generate a random byte number and return a string
 func GenerateRandom(size uint) string  {
 
 	// create an empty array
@@ -63,7 +65,7 @@ func GenerateRandom(size uint) string  {
 }
 
 
-
+// generate a random array of the bytes
 func GenerateRandomByte(size uint) []byte {
 	randomByte := make([]byte, size)
 

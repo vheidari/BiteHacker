@@ -2,9 +2,7 @@ package main
 
 import "fmt"
 // import "vheidari/main/src/SafeRandom"
-
 import "vheidari/main/src/Urls"
-
 
 
 
@@ -30,7 +28,7 @@ func main() {
 
 
 
-	getUrl := Urls.BuildUrl("http://", "192.168.1.1", "")
+	getUrl := Urls.BuildUrl("http://", "192.168.1.1", "", "/page/target")
 
 	getUrl.AddHeader("keyOne", "valueOne")
 	getUrl.AddHeader("keyTwo", "valueTwo")
@@ -47,5 +45,16 @@ func main() {
 
 	fmt.Println(getUrl)
 	fmt.Println(urlToString)
+
+
+	urlsPool := Urls.UrlPool()
+
+	urlsPool["UpdateSSID"] = getUrl
+
+	fmt.Println(urlsPool)
+
+
+
+
 
 }
