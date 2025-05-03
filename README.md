@@ -1,2 +1,3 @@
 # BiteHacker
-BiteHacker Is an inovation way to Biting Hacker
+BiteHacker is an innovative way to tackle hackers! :D.
+Ok, I will explain how it work later soon ... :)
