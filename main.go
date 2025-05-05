@@ -6,7 +6,6 @@ import "vheidari/main/src/Urls"
 import "vheidari/main/src/Ssid"
 
 
-
 // entry point
 func main() {
 	fmt.Println("Hello World!")
