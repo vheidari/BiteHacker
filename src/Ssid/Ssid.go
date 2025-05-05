@@ -20,17 +20,17 @@ type SSID struct {
 }
 
 
-func NewSSIDAndPassword(ssidSize uint, passwordSize uint, visiblity bool ) SSID {
+func NewSSIDAndPassword(ssidSize uint, passwordSize uint, visibility bool ) SSID {
 	ssid := SafeRandom.GenerateRandom(ssidSize)
 	password := SafeRandom.GenerateRandom(passwordSize)
-	visiblity = false
+	visibility = false
 
 	wirelessSecurity := WPA  {}
 	
 	newSsid := SSID {
 		ssid : ssid,
 		password : password,
-		visibility: visiblity,
+		visibility: visibility,
 		wirelessSecurity: wirelessSecurity,
 	}
 
