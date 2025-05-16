@@ -1,9 +1,11 @@
 package main
 
 import "fmt"
-// import "vheidari/main/src/SafeRandom"
-import "vheidari/main/src/Urls"
-import "vheidari/main/src/Ssid"
+import _ "vheidari/main/pkg/SafeRandom"
+import "vheidari/main/pkg/Urls"
+import "vheidari/main/pkg/Ssid"
+import "vheidari/main/pkg/HttpRequest"
+
 
 
 // entry point
@@ -64,13 +66,21 @@ func main() {
 
 
 	//  new ssid 
-	NewSsid := Ssid.NewSSIDAndPassword(16, 32, false)
+// 	NewSsid := Ssid.NewSSIDAndPassword(16, 32, false)
+// 
+// 	wpaSettings := Ssid.GenerateWPASettings("WPA2", "TKIP+AES", "WPA2-PSK");
+// 	
+// 	NewSsid.AddWPASettings(&wpaSettings)
+// 
+// 	fmt.Println(NewSsid)
 
-	wpaSettings := Ssid.GenerateWPASettings("WPA2", "TKIP+AES", "WPA2-PSK");
+
+
+	 // httpRequest
+	sampelUrl := Urls.BuilderUrl("http://", "192.168.1.1", "", "/page/target")
 	
-	NewSsid.AddWPASettings(&wpaSettings)
 
-	fmt.Println(NewSsid)
+	
 
 
 

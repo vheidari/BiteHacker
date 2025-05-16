@@ -1,6 +1,6 @@
 package Ssid 
 
-import "vheidari/main/src/SafeRandom"
+import "vheidari/main/pkg/SafeRandom"
 
 
 type WPA struct {
